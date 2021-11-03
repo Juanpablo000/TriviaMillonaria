@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ConfiguracionActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Categotria"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:layout_marginBottom="30dp" />
+
+    <Spinner
+        android:id="@+id/idSpiner"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="Comodines"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cb50"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="50:50" />
+
+        <CheckBox
+            android:id="@+id/cbSaltar"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:text="Saltar pregunta" />
+
+        <CheckBox
+            android:id="@+id/cbPublico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preguntar al publico" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cbSegundaOportunidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Segunda oportunidad" />
+
+        <CheckBox
+            android:id="@+id/cbAmigo"
+            android:layout_width="153dp"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:text="Preguntar a un amigo" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnConfirmar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirmar" />
+</LinearLayout>

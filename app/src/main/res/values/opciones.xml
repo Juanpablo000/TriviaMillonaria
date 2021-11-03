@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="combo_categorias">
+        <item>Seleccione</item>
+        <item>Arte</item>
+        <item>Ciencia</item>
+        <item>Cultura popular</item>
+        <item>Geografia</item>
+        <item>Historia</item>
+    </string-array>
+</resources>
