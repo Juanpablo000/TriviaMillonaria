@@ -20,8 +20,10 @@ public class ConfiguracionActivity extends AppCompatActivity {
     Spinner comboCategorias;
     String text;
     Button btnConfirmar;
-    Boolean[] arregloComodines = new Boolean[5];
+    boolean[] arregloComodines = new boolean[5];
+              //true false false true true
 
+    String[] aComodines = new String[5];
     CheckBox cincuenta, saltar, publico, segunda, amigo;
              //0          1         2        3       4
 
@@ -44,11 +46,13 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
                 int contador =0;
 
-                int i=0;
+                int i=0,c=0;
                 for (CheckBox checkBox: chk){
 
                     if(checkBox.isChecked()==true){
+                        aComodines[c]=checkBox.getText().toString();
                         arregloComodines[i]=true;
+                        c++;
                         contador++;
                     }else{
                         arregloComodines[i]=false;
@@ -56,58 +60,27 @@ public class ConfiguracionActivity extends AppCompatActivity {
                     i++;
                 }
 
-
-                /*
-                if(cincuenta.isChecked()==true){
-                    arregloComodines[0]=true;
-                    contador++;
-                }else{
-                    arregloComodines[0]=false;
-                }
-
-                if(saltar.isChecked()==true){
-                    arregloComodines[1]=true;
-                    contador++;
-                }else{
-                    arregloComodines[1]=false;
-                }
-
-                if(publico.isChecked()==true){
-                    arregloComodines[2]=true;
-                    contador++;
-                }else{
-                    arregloComodines[2]=false;
-                }
-
-                if(segunda.isChecked()==true){
-                    arregloComodines[3]=true;
-                    contador++;
-                }else{
-                    arregloComodines[3]=false;
-                }
-
-                if(amigo.isChecked()==true){
-                    arregloComodines[4]=true;
-                    contador++;
-                }else{
-                    arregloComodines[4]=false;
-                }
-
-                 */
                 if(!text.isEmpty() && contador==3){
 
                     Toast toast1 =
                             Toast.makeText(getApplicationContext(),
-                                    "Todo piola ", Toast.LENGTH_SHORT);
+                                    "Datos correctos ", Toast.LENGTH_SHORT);
                     toast1.show();
 
-                    startActivity(new Intent(ConfiguracionActivity.this, PreguntasActivity.class));
+                    Bundle enviarDatos = new Bundle();
+                    enviarDatos.putStringArray("kayArr",aComodines);
+                    //enviarDatos.putBooleanArray("keyArreglo",arregloComodines);
+                    enviarDatos.putString("keyCategoria",text);
+
+                    Intent intent = new Intent(ConfiguracionActivity.this, PreguntasActivity.class);
+                    intent.putExtras(enviarDatos);
+                    startActivity(intent);
 
                 }else{
 
                     Toast toast1 =
                             Toast.makeText(getApplicationContext(),
-                                    "Ta mal ", Toast.LENGTH_SHORT);
+                                    "Información erronea ", Toast.LENGTH_SHORT);
                     toast1.show();
                 }
             }

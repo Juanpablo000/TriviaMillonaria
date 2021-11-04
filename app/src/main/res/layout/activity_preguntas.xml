@@ -7,31 +7,33 @@
     android:orientation="vertical"
     tools:context=".PreguntasActivity">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:text="TextView" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="156dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/txtSaldo"
+            android:layout_width="141dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Dinero" />
+            android:text="Dinero: 0" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/txtNivel"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="Nivel" />
+            android:text="Nivel actual" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtTimer"
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:gravity="center"
+        android:text="Timer"
+        android:textSize="35dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,21 +41,21 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnC1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnC2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnC3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -63,27 +65,43 @@
     <TextView
         android:id="@+id/txtPregunta"
         android:layout_width="match_parent"
-        android:layout_height="106dp"
+        android:layout_height="102dp"
         android:text="Pregunta" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip4"
+    <RadioGroup
+        android:id="@+id/radiog"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip5"
+        <RadioButton
+            android:id="@+id/rb3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/rb4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnPregunta"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Confirmar" />
 
 </LinearLayout>

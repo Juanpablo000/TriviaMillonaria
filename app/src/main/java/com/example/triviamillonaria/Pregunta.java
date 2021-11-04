@@ -4,12 +4,17 @@ public class Pregunta {
     private String descripcion;
     private String opciones[];
     private String dificultad;
+    private int indiceRespuesta;
 
+    public Pregunta(){
 
-    public Pregunta(String descripcion, String dificultad, String[] opciones) {
+    }
+
+    public Pregunta(String descripcion, String dificultad, String[] opciones, int indiceRespuesta) {
         this.opciones = opciones;
         this.dificultad = dificultad;
         this.descripcion = descripcion;
+        this.indiceRespuesta = indiceRespuesta;
     }
 
 
@@ -24,6 +29,15 @@ public class Pregunta {
     public String[] getOpciones(){
         return opciones;
     }
+
+    public int getIndiceRespuesta() {
+        return indiceRespuesta;
+    }
+
+    public void setIndiceRespuesta(int indiceRespuesta) {
+        this.indiceRespuesta = indiceRespuesta;
+    }
+
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
