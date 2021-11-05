@@ -16,57 +16,61 @@
             android:id="@+id/txtSaldo"
             android:layout_width="141dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="5"
+            android:textSize="20dp"
             android:text="Dinero: 0" />
 
         <TextView
             android:id="@+id/txtNivel"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_weight="1"
+            android:layout_weight="5"
+            android:textSize="20dp"
             android:text="Nivel actual" />
+
     </LinearLayout>
 
     <TextView
         android:id="@+id/txtTimer"
         android:layout_width="match_parent"
-        android:layout_height="113dp"
+        android:layout_height="110dp"
         android:gravity="center"
         android:text="Timer"
         android:textSize="35dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="84dp"
+        android:layout_height="103dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnC1"
+        <ImageButton
+            android:id="@+id/ibtn1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Button" />
+            app:srcCompat="@android:drawable/btn_star" />
 
-        <Button
-            android:id="@+id/btnC2"
+        <ImageButton
+            android:id="@+id/ibtn2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Button" />
+            app:srcCompat="@android:drawable/btn_star_big_off" />
 
-        <Button
-            android:id="@+id/btnC3"
+        <ImageButton
+            android:id="@+id/ibtn3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Button" />
+            app:srcCompat="@android:drawable/btn_star_big_on" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/txtPregunta"
         android:layout_width="match_parent"
-        android:layout_height="102dp"
-        android:text="Pregunta" />
+        android:layout_height="62dp"
+        android:text="Pregunta"
+        android:textSize="16sp" />
 
     <RadioGroup
         android:id="@+id/radiog"
