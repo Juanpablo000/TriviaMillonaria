@@ -70,12 +70,16 @@
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:text="Pregunta"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
     <RadioGroup
         android:id="@+id/radiog"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <RadioButton
             android:id="@+id/rb1"
@@ -106,6 +110,8 @@
         android:id="@+id/btnPregunta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirmar" />
+        android:text="Confirmar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
 </LinearLayout>

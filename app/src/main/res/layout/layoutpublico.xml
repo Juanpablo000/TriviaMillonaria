@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="350dp"
     android:layout_height="350dp"
     android:layout_gravity="center"
     android:background="@drawable/amigofondo">
 
-    <ImageView
-        android:id="@+id/amigoIV"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph"
+        android:layout_width="263dp"
+        android:layout_height="148dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:src="@drawable/amigollamada" />
+        android:layout_marginTop="18dp" />
 
     <TextView
-        android:id="@+id/descripcionAmigo"
-        android:layout_width="268dp"
+        android:id="@+id/descripcionPublico"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="180dp"
-        android:text="prueba"
+        android:text="El publico ha votado"
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/btnAceptar"
+        android:id="@+id/btnAceptarPublico"
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

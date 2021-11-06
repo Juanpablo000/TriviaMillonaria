@@ -19,9 +19,11 @@
 
     <Spinner
         android:id="@+id/idSpiner"
-        android:layout_width="174dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center" />
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,17 +44,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="59dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <CheckBox
             android:id="@+id/cb50"
-            android:layout_width="100dp"
+            android:layout_width="89dp"
             android:layout_height="wrap_content"
             android:text="50:50" />
 
         <CheckBox
             android:id="@+id/cbSaltar"
-            android:layout_width="146dp"
+            android:layout_width="138dp"
             android:layout_height="wrap_content"
             android:text="Saltar pregunta" />
 
@@ -67,7 +71,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="99dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <CheckBox
             android:id="@+id/cbSegundaOportunidad"
@@ -78,7 +84,7 @@
         <CheckBox
             android:id="@+id/cbAmigo"
             android:layout_width="153dp"
-            android:layout_height="37dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Preguntar a un amigo" />
     </LinearLayout>
@@ -87,5 +93,7 @@
         android:id="@+id/btnConfirmar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirmar" />
+        android:text="Confirmar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 </LinearLayout>

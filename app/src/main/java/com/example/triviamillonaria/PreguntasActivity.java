@@ -2,44 +2,40 @@ package com.example.triviamillonaria;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.SystemClock;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.chip.Chip;
-import com.google.android.material.chip.ChipGroup;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.helper.StaticLabelsFormatter;
+import com.jjoe64.graphview.series.BarGraphSeries;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Locale;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class PreguntasActivity extends AppCompatActivity {
     TextView tpregunta, tTimer, tSaldo, tNivel, tAmigo;
     RadioButton[] arregloRb;
-    int[] saldosDisponibles = new int[]{100,300,500,800,1000};
+    private final static int[] saldosDisponibles = new int[]{100,300,500,800,1000};
     RadioButton opcion1, opcion2, opcion3, opcion4;
-    boolean respondido, comodinSegunda=false;
+    boolean respondido, comodinSegunda;
 
     String categoria;
     Button btnPregunta;
@@ -48,10 +44,11 @@ public class PreguntasActivity extends AppCompatActivity {
     Pregunta pActual;
     ImageButton imageButton1,imageButton2,imageButton3;
     Dialog mDialog;
+    Random r;
 
     int contadorPreguntas=0, preguntasTotales =3;
 
-    private static long cuentaAtrasMls = 30000;// 30 segundos
+    private long cuentaAtrasMls = 30000;// 30 segundos
     private CountDownTimer countDownTimer;
     private long tiempoRestanteMls;
     ArrayList<Pregunta> listaPreguntas = new ArrayList<Pregunta>();
@@ -64,7 +61,6 @@ public class PreguntasActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mDialog = new Dialog(this);
-        tAmigo = (TextView) findViewById(R.id.descripcionAmigo);
 
         imageButton1 = (ImageButton) findViewById(R.id.ibtn1);
         imageButton2 = (ImageButton) findViewById(R.id.ibtn2);
@@ -108,11 +104,13 @@ public class PreguntasActivity extends AppCompatActivity {
 
 
         cargarPreguntas();
-        MostrarProximaPregunta();
+        mostrarProximaPregunta();
 
         btnPregunta.setOnClickListener(view -> {
+            // verificar si hay un radioButton seleccionado
+            // revisarRespuesta()
            if(respondido){
-               MostrarProximaPregunta();
+               mostrarProximaPregunta();
            }
         });
 
@@ -205,7 +203,7 @@ public class PreguntasActivity extends AppCompatActivity {
 
     }
 
-    private void MostrarProximaPregunta(){
+    private void mostrarProximaPregunta(){
 
         radioGroup.clearCheck();
 
@@ -214,7 +212,7 @@ public class PreguntasActivity extends AppCompatActivity {
             tpregunta.setText(pActual.getDescripcion());
             int i=0;
             for(RadioButton radioButton: arregloRb){
-                if(comodinSegunda==false){
+                if(!comodinSegunda){
                     radioButton.setEnabled(true);
                 }
 
@@ -246,6 +244,11 @@ public class PreguntasActivity extends AppCompatActivity {
                 tiempoRestanteMls=0;
                 actualizarCuentaAtrasTexto();
                 revisarRespuesta();
+                //cuando se acabe el tiempo se deben inhabilitar los imgbuttons
+                /*
+                for(int i; i<3;i++){
+                }
+                 */
             }
         }.start();
     }
@@ -269,7 +272,7 @@ public class PreguntasActivity extends AppCompatActivity {
                     }
                 }
                 contadorPreguntas--;
-                MostrarProximaPregunta();
+                mostrarProximaPregunta();
                 comodinSegunda=false;
             }else{
                 //fin del juego
@@ -306,17 +309,6 @@ public class PreguntasActivity extends AppCompatActivity {
         finish();
     }
 
-    public void onWindowFocusChanged(){
-        View decorView = getWindow().getDecorView();
-        // Hide both the navigation bar and the status bar.
-        // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
-        // a general rule, you should design your app to hide the status bar whenever you
-        // hide the navigation bar.
-        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-    }
-
     private void comodinCincuenta(){
         radioGroup.clearCheck();
 
@@ -326,6 +318,9 @@ public class PreguntasActivity extends AppCompatActivity {
         boolean con1=true,con2=true;
 
         //validar que NO sean los mismo numeros aleatorios
+        //Collections.shuffle(listaPreguntas);
+
+
         do{
             if(con1){
                 aleatorio1 = (int) (Math.random() * 4);//0
@@ -361,7 +356,7 @@ public class PreguntasActivity extends AppCompatActivity {
 
     private void comodinSaltar(){
         countDownTimer.cancel();
-        MostrarProximaPregunta();
+        mostrarProximaPregunta();
     }
 
     private void btnImgs(ImageButton imageButton, String s){
@@ -373,16 +368,91 @@ public class PreguntasActivity extends AppCompatActivity {
         }else if(s.equals("Saltar pregunta")){
             comodinSaltar();
         }else if(s.equals("Preguntar al publico")){
-            //comodinPublico
+            comodinPublico();
         }else if(s.equals("Segunda oportunidad")) {
             //Se gasta y epera a que el timer finalice para ver si se aplica o no
             comodinSegunda=true;
-        }else if(s.equals("Preguntar a un amigo")){
-            mDialog.setContentView(R.layout.layoutamigo);
-            mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            mDialog.show();
+        }else if(s.equals("Preguntar a un amigo")) {
+           comodinAmigo();
         }
     }
 
+    private void comodinAmigo(){
+        mDialog.setContentView(R.layout.layoutamigo);
+        mDialog.setCancelable(false);
+        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+
+        String[]tmp = pActual.getOpciones();
+        TextView txtAmigo = mDialog.findViewById(R.id.descripcionAmigo);
+        Collections.shuffle(Arrays.asList(tmp));
+        txtAmigo.setText("Tu amigo, cree que la opción correcta es: " +tmp[0]);
+
+        Button btnSalida = mDialog.findViewById(R.id.btnAceptar);
+        btnSalida.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDialog.dismiss();
+            }
+        });
+        mDialog.show();
+    }
+
+    private void comodinPublico(){
+
+        mDialog.setContentView(R.layout.layoutpublico);
+        mDialog.setCancelable(false);
+        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+
+        r = new Random();
+        int[] tmp= new int[4];
+
+        for(int i=0; i<4;i++){
+            tmp[i]=  r.nextInt(11);// Entre 0 y 10
+        }
+
+
+        GraphView grafica = (GraphView) mDialog.findViewById(R.id.graph);
+        BarGraphSeries<DataPoint> series = new BarGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(1, tmp[0]),
+                new DataPoint(2, tmp[1]),
+                new DataPoint(3, tmp[2]),
+                new DataPoint(4, tmp[3])
+        });
+        grafica.addSeries(series);
+
+
+        //set manual X bounds
+        grafica.getViewport().setXAxisBoundsManual(true);
+        grafica.getViewport().setMinX(0);
+        grafica.getViewport().setMaxX(5);
+
+        //set manual Y bounds
+        grafica.getViewport().setYAxisBoundsManual(true);
+        grafica.getViewport().setMinY(0);
+        grafica.getViewport().setMaxY(10);
+
+
+        // use static labels for horizontal and vertical labels
+        StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(grafica);
+        staticLabelsFormatter.setHorizontalLabels(new String[] {"","A", "B", "C","D",""});
+        grafica.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);
+
+
+        series.setSpacing(30);
+        series.setDrawValuesOnTop(true);
+        series.setValuesOnTopColor(Color.BLACK);
+
+        Button btnSalida = mDialog.findViewById(R.id.btnAceptarPublico);
+        btnSalida.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDialog.dismiss();
+            }
+        });
+
+        mDialog.show();
+    }
 
 }

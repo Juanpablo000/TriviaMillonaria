@@ -49,7 +49,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
                 int i=0,c=0;
                 for (CheckBox checkBox: chk){
 
-                    if(checkBox.isChecked()==true){
+                    if(checkBox.isChecked()){
                         aComodines[c]=checkBox.getText().toString();
                         arregloComodines[i]=true;
                         c++;
@@ -62,14 +62,12 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
                 if(!text.isEmpty() && contador==3){
 
-                    Toast toast1 =
-                            Toast.makeText(getApplicationContext(),
-                                    "Datos correctos ", Toast.LENGTH_SHORT);
-                    toast1.show();
+                    Toast.makeText(getApplicationContext(),
+                                    "Datos correctos ", Toast.LENGTH_SHORT).show();
+
 
                     Bundle enviarDatos = new Bundle();
                     enviarDatos.putStringArray("kayArr",aComodines);
-                    //enviarDatos.putBooleanArray("keyArreglo",arregloComodines);
                     enviarDatos.putString("keyCategoria",text);
 
                     Intent intent = new Intent(ConfiguracionActivity.this, PreguntasActivity.class);
@@ -78,10 +76,8 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
                 }else{
 
-                    Toast toast1 =
-                            Toast.makeText(getApplicationContext(),
-                                    "Información erronea ", Toast.LENGTH_SHORT);
-                    toast1.show();
+                    Toast.makeText(getApplicationContext(),
+                                    "Información erronea ", Toast.LENGTH_SHORT).show();
                 }
             }
         });
