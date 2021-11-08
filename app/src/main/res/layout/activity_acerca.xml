@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ECF0F1"
+    android:orientation="vertical"
     tools:context=".AcercaActivity">
 
     <TextView
+        android:layout_marginTop="10dp"
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="Información general"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:text="La aplicación trivia millonaria consiste en un juego de formato quiz basado en el conocido concurso ¿Quién quiere ser millonario?." />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="El juego posee 5 comodines totales y la información de cada uno de ello se encuentra ubicada en la sección de instrucciones. Cabe resaltar que por partida solo estarán disponibles 3 comodines.." />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:text="Solo existen 4 categorías disponibles, pero independientemente de la categoría el juego siempre tendrá 15 preguntas, de las cuales si se logran completar todas se gana el juego, si se escoge mal una opción de respuesta se de por finalizada la partida"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="Autor"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Acerca de" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Esta aplicación fue realizada por Juan Pablo Grisales" />" />
+</LinearLayout>

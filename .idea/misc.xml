@@ -5,14 +5,15 @@
       <map>
         <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/drawable/amigo.xml" value="0.37969924812030076" />
         <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/drawable/amigofondo.xml" value="0.264" />
-        <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/activity_acerca.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/activity_acerca.xml" value="0.4" />
         <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/activity_configuracion.xml" value="0.4" />
         <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/activity_informacion.xml" value="0.22871376811594202" />
         <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/activity_instrucciones.xml" value="0.20221169036334913" />
-        <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/activity_preguntas.xml" value="0.264" />
         <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/layoutamigo.xml" value="0.264" />
         <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/layoutcomodines.xml" value="0.264" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/layoutfinjuego.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/juanp/AndroidStudioProjects/TriviaMillonaria/app/src/main/res/layout/layoutpublico.xml" value="0.264" />
       </map>
     </option>

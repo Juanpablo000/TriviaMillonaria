@@ -29,11 +29,11 @@ public class InstruccionesActivity extends AppCompatActivity {
     private ArrayList<Comodin> obtenerArrayItems()
     {
         ArrayList<Comodin> listComodin = new ArrayList<>();
-        listComodin.add(new Comodin(R.drawable.amigo,"Llamar a un amigo", "Este comodin se usa para preguntarle a un amigo la respuesta sobre la pregunta actual"));
-        listComodin.add(new Comodin(R.drawable.cincuenta,"50:50", "Este comodin se usa para preguntarle a un amigo la respuesta sobre la pregunta actual"));
-        listComodin.add(new Comodin(R.drawable.cambiar,"Cambiar pregunta", "Este comodin se usa para preguntarle a un amigo la respuesta sobre la pregunta actual"));
-        listComodin.add(new Comodin(R.drawable.segunda,"Segunda oportunidad", "Este comodin se usa para preguntarle a un amigo la respuesta sobre la pregunta actual"));
-        listComodin.add(new Comodin(R.drawable.publico,"Preguntarle al publico", "Este comodin se usa para preguntarle a un amigo la respuesta sobre la pregunta actual"));
+        listComodin.add(new Comodin(R.drawable.amigo,"Llamar a un amigo", "Este comodin se usa para preguntarle a un amigo la respuesta sobre la pregunta actual."));
+        listComodin.add(new Comodin(R.drawable.cincuenta,"50:50", "Anula dos opciones de respuesta incorrectas dejando solo la mitad de opciones iniciales."));
+        listComodin.add(new Comodin(R.drawable.cambiar,"Cambiar pregunta", "Cambia la pregunta actual por otra pregunta disponible."));
+        listComodin.add(new Comodin(R.drawable.segunda,"Segunda oportunidad", "Anula una opción erronea y la cuenta regresiva se reinicia."));
+        listComodin.add(new Comodin(R.drawable.publico,"Preguntarle al publico", "Muestra una grafica de barras con las opciones que el publico cree que son correctas."));
         return listComodin;
     }
 

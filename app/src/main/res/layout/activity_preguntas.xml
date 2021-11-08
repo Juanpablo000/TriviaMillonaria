@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#ECF0F1"
     tools:context=".PreguntasActivity">
 
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -16,9 +18,10 @@
             android:id="@+id/txtSaldo"
             android:layout_width="141dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
             android:layout_weight="5"
-            android:textSize="20dp"
-            android:text="Dinero: 0" />
+            android:text="Dinero: 0"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/txtNivel"
@@ -33,7 +36,7 @@
     <TextView
         android:id="@+id/txtTimer"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="88dp"
         android:gravity="center"
         android:text="Timer"
         android:textSize="35dp" />
@@ -68,11 +71,12 @@
     <TextView
         android:id="@+id/txtPregunta"
         android:layout_width="match_parent"
-        android:layout_height="62dp"
-        android:text="Pregunta"
-        android:textSize="16sp"
+        android:layout_height="80dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Pregunta"
+        android:textSize="16sp" />
 
     <RadioGroup
         android:id="@+id/radiog"
@@ -85,7 +89,7 @@
             android:id="@+id/rb1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="RadioButton"/>
 
         <RadioButton
             android:id="@+id/rb2"
@@ -107,11 +111,12 @@
     </RadioGroup>
 
     <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/btnPregunta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Confirmar"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
 </LinearLayout>
