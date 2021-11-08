@@ -437,7 +437,6 @@ public class PreguntasActivity extends AppCompatActivity {
         }else if(s.equals("Preguntar al publico")){
             comodinPublico();
         }else if(s.equals("Segunda oportunidad")) {
-            //Se gasta y epera a que el timer finalice para ver si se aplica o no
             comodinSegunda=true;
         }else if(s.equals("Preguntar a un amigo")) {
            comodinAmigo();
@@ -453,7 +452,7 @@ public class PreguntasActivity extends AppCompatActivity {
         String[]tmp = pActual.getOpciones();
         TextView txtAmigo = mDialog.findViewById(R.id.descripcionAmigo);
         Collections.shuffle(Arrays.asList(tmp));
-        txtAmigo.setText("Tu amigo, cree que la opción correcta es: " +tmp[0]);
+        txtAmigo.setText("Tu amigo cree que la opción correcta es: " +tmp[0]);
 
         Button btnSalida = mDialog.findViewById(R.id.btnAceptar);
         btnSalida.setOnClickListener(new View.OnClickListener() {
@@ -523,3 +522,11 @@ public class PreguntasActivity extends AppCompatActivity {
     }
 
 }
+
+/*
+        for(int i=0; i<4; i++){
+            if(!arregloRb[i].isEnabled()){
+                //no me recomiendes esa opcion
+            }
+        }
+ */

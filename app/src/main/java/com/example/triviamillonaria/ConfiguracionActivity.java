@@ -21,13 +21,10 @@ public class ConfiguracionActivity extends AppCompatActivity {
     String text;
     Button btnConfirmar;
     boolean[] arregloComodines = new boolean[5];
-              //true false false true true
 
     String[] aComodines = new String[5];
     CheckBox cincuenta, saltar, publico, segunda, amigo;
              //0          1         2        3       4
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,26 +96,6 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
                 if (text.equals("Seleccione")){
                     text="";
-                }
-                /*
-                Toast toast1 =
-                        Toast.makeText(getApplicationContext(),
-                                "Toast por defecto " + text, Toast.LENGTH_SHORT);
-                toast1.show();
-                */
-
-                if(text.equals("Arte")){
-                    Toast toast2 =
-                            Toast.makeText(getApplicationContext(),
-                                    "Arte seleccionado", Toast.LENGTH_SHORT);
-
-                    toast2.show();
-                }else if(text.equals("Historia")){
-                    Toast toast3 =
-                            Toast.makeText(getApplicationContext(),
-                                    "Historia seleccionada", Toast.LENGTH_SHORT);
-
-                    toast3.show();
                 }
             }
 

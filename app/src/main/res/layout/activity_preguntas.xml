@@ -36,7 +36,7 @@
     <TextView
         android:id="@+id/txtTimer"
         android:layout_width="match_parent"
-        android:layout_height="88dp"
+        android:layout_height="71dp"
         android:gravity="center"
         android:text="Timer"
         android:textSize="35dp" />
@@ -111,7 +111,7 @@
     </RadioGroup>
 
     <Button
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:id="@+id/btnPregunta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
