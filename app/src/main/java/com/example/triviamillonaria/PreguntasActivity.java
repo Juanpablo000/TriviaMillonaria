@@ -32,27 +32,27 @@ import java.util.Locale;
 import java.util.Random;
 
 public class PreguntasActivity extends AppCompatActivity {
-    TextView tpregunta, tTimer, tSaldo, tNivel;
-    RadioButton[] arregloRb;
+    private TextView tpregunta, tTimer, tSaldo, tNivel;
+    private RadioButton[] arregloRb;
     private final static int[] saldosDisponibles = new int[]{100,300,500,800,1000,2000,4000,8000,16000,32000,64000,125000,250000,500000,1000000};
-    RadioButton opcion1, opcion2, opcion3, opcion4;
+    private RadioButton opcion1, opcion2, opcion3, opcion4;
     boolean comodinSegunda;
 
-    String categoria;
-    Button btnPregunta;
-    ImageButton[] ArrayBtns;
-    RadioGroup radioGroup;
-    Pregunta pActual;
-    ImageButton imageButton1,imageButton2,imageButton3;
-    Dialog mDialog;
-    Random r;
+    private String categoria;
+    private Button btnPregunta;
+    private ImageButton[] ArrayBtns;
+    private RadioGroup radioGroup;
+    private Pregunta pActual;
+    private ImageButton imageButton1,imageButton2,imageButton3;
+    private Dialog mDialog;
+    private Random r;
 
-    int contadorPreguntas=0, preguntasTotales =15, dineroFinal=0;
+    private int contadorPreguntas=0, preguntasTotales =15, dineroFinal=0;
 
     private long cuentaAtrasMls = 30000;// 30 segundos
     private CountDownTimer countDownTimer;
     private long tiempoRestanteMls;
-    ArrayList<Pregunta> listaPreguntas = new ArrayList<Pregunta>();
+    private ArrayList<Pregunta> listaPreguntas = new ArrayList<Pregunta>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -192,7 +192,7 @@ public class PreguntasActivity extends AppCompatActivity {
             listaPreguntas.add(new Pregunta("¿Capital de la India?","facil",new String[]{"Nueva Deli","Harare","Goa","Praia"},0));
 
             //preguntas medias (minimo num preguntas 4)
-            listaPreguntas.add(new Pregunta("¿Riyadh es la ciudad capital de?","medio", new String[]{"Maine","Alaske","Arabia Sauidita","Suecia"},2));
+            listaPreguntas.add(new Pregunta("¿Riyadh es la ciudad capital de?","medio", new String[]{"Maine","Alaska","Arabia Sauidita","Suecia"},2));
             listaPreguntas.add(new Pregunta("¿Cual de las siguientes NO es una ciudad de Brasil?","medio", new String[]{"Brasilia","Guimarães","Rio de Janeiro","Belo Horizonte"},1));
             listaPreguntas.add(new Pregunta("¿Cuantas comunidades autónomas posee España?","medio", new String[]{"15","17","16","20"},1));
             listaPreguntas.add(new Pregunta("¿El rio Sena pasa por cual país?","medio", new String[]{"Inglaterra","España","Francia","Suiza"},2));
